@@ -1,2 +1,2 @@
 #!/bin/bash
-sprint_two -c "$PYCODE"
+python3 -c "$PYCODE"
