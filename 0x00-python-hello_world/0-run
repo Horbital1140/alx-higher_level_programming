@@ -1,0 +1,2 @@
+#!/bin/bash
+pyhthon_is_fun $PYFILE
