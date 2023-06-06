@@ -8,4 +8,3 @@ for dualnumb1 in range(0, 10):
             print("{}{}".format(dualnumb1, dualnumb2))
         else:
             print("{}{}".format(dualnumb1, dualnumb2), end=", ")
-
