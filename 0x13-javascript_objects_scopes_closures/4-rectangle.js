@@ -8,20 +8,19 @@ class Rectangle {
   }
 
   print () {
-    for (let b = 0; b < this.width; b++) {
-      let b = '';
-
-      for (let c = 0; c < this.height; c++) {
-        b += 'x';
+    for (let i = 0; i < this.height; i++) {
+      let s = '';
+      for (let j = 0; j < this.width; j++) {
+        s += 'X';
       }
-      console.log(b);
+      console.log(s);
     }
   }
 
   rotate () {
-    const rot = this.width;
+    const aux = this.width;
     this.width = this.height;
-    this.height = rot;
+    this.height = aux;
   }
 
   double () {
