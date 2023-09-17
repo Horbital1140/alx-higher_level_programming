@@ -3,6 +3,7 @@
 """
 import sys
 from model_state import Base, State
+from model_city import City
 from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
 
@@ -13,8 +14,8 @@ if __name__ == "__main__":
     Base.metadata.create_all(bind=engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    add_state = State(name='Louisiana')
-    session.add(add_state)
-    sql_result = session.query(State).filter_by(name='Louisiana').first()
-    print(sql_result.id)
-    session.commit()
+    
+    result = (session.query(State.name, City.id, City.name)
+                     .filter(State.id == City.state_id))
+    for instance in result:
+        print(instance[0] + ": (" + str(instance[1]) + ") " + instance[2])
